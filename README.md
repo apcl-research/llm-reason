@@ -1,1 +1,34 @@
-# llm-reason
+# Do Code LLMs Do Static Analysis?
+
+Proposed by:
+- [Chia-Yi Su](https://chiayisu.github.io/)
+- [Collin McMillan](https://sdf.org/~cmc/)
+
+## Quick link
+- [To-do list](#to-do-list)
+- [AST generation](#ast-generation)
+
+
+## To-do list
+
+To set up your local environment, run the following command. We recommend the use of a virtual environment for running the experiments.
+```
+pip install -r requirements.txt
+```
+For finetuning or running codellama related experiments, use:
+```
+pip install -r requirements_codellama.txt
+```
+
+## AST generation
+
+- For AST generation experiements, visit related directory for desired models. For example, if you want to run the ``codellama`` model, you would visit ``srcml/java/codellama``.
+- Each directory has its related ``yaml`` file for configuration.
+- The paramters for generating srcml are as follows:
+
+```
+function_file_dir: file location of the functions
+q90_fid_file: file location of the function id for testset
+OUT_FILENAME: filename for the output file
+model_id: file location of your codellama model
+```
