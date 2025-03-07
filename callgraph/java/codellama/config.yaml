@@ -1,0 +1,4 @@
+model_id: "/scratch/chiayi/CodeLlama-13b-Instruct-hf/"
+OUT_FILENAME: "/scratch/chiayi/llm_reason/callgraph/java/callgraph_result_codellama_java_q90.pkl"
+callgraph_data_file: "/nfs/projects/llm_reason/callgraph/java_new/callgraph_java_test_q90.pkl"
+llm_out_file: "/nfs/projects/llm_reason/callgraph/callgraph_result_codellama_java_q90.pkl"
