@@ -1,0 +1,4 @@
+function_file_dir: "/nublar/datasets/jm52m/fundats-j1.pkl"
+q90_fid_file: "/nublar/datasets/jm52m/q90testfids.pkl"
+OUT_FILENAME: "./srcml_result_codellama_java_function_test.pkl"
+model_id: "/scratch/chiayi/CodeLlama-13b-Instruct-hf/"
