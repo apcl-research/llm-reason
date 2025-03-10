@@ -1,4 +1,6 @@
 model_id: "../llm_reason/CodeLlama-13b-Instruct-hf/"
 OUT_FILENAME: "./data_flow_results_codellama_java_part3.pkl"
 datafile: "./data_flow_results_java_test.pkl"
+tools_filename: "/nfs/dropbox/llm_reason/data_analysis/data_flow_results_java_test.pkl"
+llm_filename: "/scratch/chiayi/llm_reason/data_analysis/data_flow_results_codellama_java_all.pkl"
 
