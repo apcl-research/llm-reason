@@ -9,7 +9,8 @@ Proposed by:
 - [Note](#note)
 - [AST generation](#ast-generation)
 - [Callgraph generation](#callgraph-generation)
-- [Codellama](#Codellama)
+- [Codellama](#codellama)
+- [Jam](#jam)
 
 
 ## To-do list
@@ -18,9 +19,13 @@ To set up your local environment, run the following command. We recommend the us
 ```
 pip install -r requirements.txt
 ```
-For finetuning or running codellama related experiments, use:
+For finetuning or running ``codellama`` related experiments, use:
 ```
 pip install -r requirements_codellama.txt
+```
+For finetuning or running ``jam`` related experiments, use:
+```
+pip install -r requirements_jam.txt
 ```
 
 # Note 
@@ -152,4 +157,46 @@ The command is as follows:
 CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='2,3' python3 generate_srcml_java.py
 ```
 
+### Metrics
 
+
+
+## Jam
+## Compile data
+For compiling data, look at the ``data`` directory for the desired task. For example, look at ``jam_codegen`` for the codegen task
+
+The command for compiling data is as follows:
+```
+python3 prepare_fc_raw.py
+```
+
+## Finetuning models
+For finetuning models, look at the ``config`` directory for the desired task. For example, look at ``codegen_base.py`` for the codegen base task.
+
+The example command for finetuning the model is as follows:
+
+```
+CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4001 --nnodes=1 --nproc_per_node=1 train.py config/codegen_base.py --freeze=False --outfilename=ckpt.pt --always_save_checkpoint=True
+```
+
+### Generate
+
+For generation, look at ``sample_*.py`` for the desired task. For example, look at ``sample_codegen.py`` for the codegen task.
+
+The example command is as follows:
+
+```
+CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1 sample_codegen.py config/codegen_base.py --outfilename=ckpt.pt --prediction_filename=predict_codegen_base.txt
+```
+
+### Metrics
+
+For metrics, look at ``metrics_*.py`` for the desired metrics. For example, look at ``metrics_bleu.py`` for bleu score.
+
+For statistical test, look at ``metrics_*_diff.py`` for the desired metrics. For example, ``metrics_bleu_diff.py`` for statistical test on bleu score.
+
+The example command is as follows:
+
+```
+python3 bleu.py jam_cgpt_predictions/predict_codegen_base.txt
+```
