@@ -1,0 +1,4 @@
+output_filename: "predictions/callgraph_java_codellama_new.pkl"
+model_name_or_path: "codellama/CodeLlama-13b-Instruct-hf"
+adapter_path: 'callgraph_java_pretrained/checkpoint-1050' 
+testfile: "/nfs/projects/llm_reason/callgraph/java_new/callgraph_java_test_q90.pkl"

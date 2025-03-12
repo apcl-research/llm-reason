@@ -1,0 +1,4 @@
+output_filename: "predictions/dataflow_java_codellama.pkl"
+model_name_or_path: "codellama/CodeLlama-13b-Instruct-hf"
+testfile: "/nfs/dropbox/llm_reason/data_analysis/data_flow_results_java_test.pkl"
+adapter_path: 'dataflow_pretrained_java/checkpoint-720'

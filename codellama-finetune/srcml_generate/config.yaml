@@ -1,0 +1,4 @@
+srcml_filename: "predictions/srcml_codellama.pkl"
+model_name_or_path: "codellama/CodeLlama-13b-Instruct-hf"
+adapter_path: 'srcml_pretrained/checkpoint-4800'
+testfile: "data/srcml_java_test.json"
