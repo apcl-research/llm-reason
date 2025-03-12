@@ -158,8 +158,15 @@ CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='2,3' python3 generate_srcml
 ```
 
 ### Metrics
+For metrics on code intelligence tasks, please refer to [Jam](#jam) section
 
+For metrics other than code intelligence tasks, visit related directory for the desired task. For example, if you want to generate srcml after finetuning codellama, you would visit ``srcml_metrics`` directory.
 
+the example command is as follows:
+
+```
+python3 srcml_metrics_java.py
+```
 
 ## Jam
 ## Compile data
