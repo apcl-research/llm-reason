@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46027074.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>checkStageEnd</name><parameter_list>(<parameter><decl><type><name>GameEngine</name></type> <name>engine</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if<condition>( <expr><operator>(</operator><name>clearflag</name><operator>)</operator> <operator>||</operator> <operator>(</operator><operator>(</operator><name>stagetimeNow</name> <operator>&lt;=</operator> <literal type="number">0</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>stagetimeStart</name> <operator>&gt;</operator> <literal type="number">0</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name><name>engine</name><operator>.</operator><name>timerActive</name></name><operator>)</operator></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>skipflag</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>engine</name><operator>.</operator><name>nowPieceObject</name></name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>engine</name><operator>.</operator><name>timerActive</name></name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>engine</name><operator>.</operator><name>stat</name></name> <operator>=</operator> <name><name>GameEngine</name><operator>.</operator><name>STAT_CUSTOM</name></name></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>engine</name><operator>.</operator><name>resetStatc</name></name><operator>++</operator></expr>;</expr_stmt>
+		</block_content>}</block></if> <if type="elseif">else if<condition>(<expr><operator>(</operator><name>limittimeNow</name> <operator>&lt;=</operator> <literal type="number">0</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name><name>engine</name><operator>.</operator><name>timerActive</name></name><operator>)</operator></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name><name>engine</name><operator>.</operator><name>nowPieceObject</name></name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>engine</name><operator>.</operator><name>stat</name></name> <operator>=</operator> <name><name>GameEngine</name><operator>.</operator><name>STAT_GAMEOVER</name></name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>engine</name><operator>.</operator><name>resetStatc</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

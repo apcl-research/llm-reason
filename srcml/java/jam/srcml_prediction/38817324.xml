@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31494096.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>delete</name><parameter_list>(<parameter><decl><type><name>BaseDataObject</name></type> <name>dataObject</name></decl></parameter>)</parameter_list><block>{<block_content>
+	<try>try <block>{<block_content>
+	    <decl_stmt><decl><type><name>Statement</name></type> <name>stmt</name> <init>= <expr><call><name><name>ConnectionJDBC</name><operator>.</operator><name>getConnection</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getConn</name><argument_list>()</argument_list></call><operator>.</operator><call><name>createStatement</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <decl_stmt><decl><type><name>String</name></type> <name>SQL</name> <init>= <expr><name><name>SQLDefinition</name><operator>.</operator><name>SQLDELETE</name></name> <operator>+</operator> <literal type="string">" "</literal> <operator>+</operator> <name><name>SQLDefinition</name><operator>.</operator><name>SQLFROM</name></name> <operator>+</operator> <literal type="string">" "</literal> <operator>+</operator> <call><name><name>dataObject</name><operator>.</operator><name>getSourceTable</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <expr_stmt><expr><name>SQL</name> <operator>+=</operator> <literal type="string">" "</literal> <operator>+</operator> <name><name>SQLDefinition</name><operator>.</operator><name>SQLWHERE</name></name> <operator>+</operator> <literal type="string">" "</literal> <operator>+</operator> <literal type="string">"ID="</literal> <operator>+</operator> <call><name><name>dataObject</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><call><name><name>stmt</name><operator>.</operator><name>execute</name></name><argument_list>(<argument><expr><name>SQL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+	</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>SQLException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	    <expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	    <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+	</block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

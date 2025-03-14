@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10592783.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>itemCount</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name>isZipFile</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <try>try <init>(<decl><type><name>ZipFile</name></type> <name>zip</name> <init>= <expr><operator>new</operator> <call><name>ZipFile</name><argument_list>(<argument><expr><name>relativePath</name></expr></argument>, <argument><expr><name>charset</name></expr></argument>)</argument_list></call></expr></init></decl>)</init> <block>{<block_content>
+                <return>return <expr><call><name><name>zip</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</return>
+            </block_content>}</block></try>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <try>try <init>(<decl><type><name>ZipInputStream</name></type> <name>zos</name> <init>= <expr><operator>new</operator> <call><name>ZipInputStream</name><argument_list>(<argument><expr><call><name>openStream</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>charset</name></expr></argument>)</argument_list></call></expr></init></decl>)</init> <block>{<block_content>
+                <decl_stmt><decl><type><name>int</name></type> <name>count</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+                <while>while <condition>(<expr><call><name><name>zos</name><operator>.</operator><name>getNextEntry</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                    <expr_stmt><expr><name>count</name><operator>++</operator></expr>;</expr_stmt>
+                </block_content>}</block></while>
+                <return>return <expr><name>count</name></expr>;</return>
+            </block_content>}</block>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

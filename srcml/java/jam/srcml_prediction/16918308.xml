@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/29770015.java">    <function><type><specifier>static</specifier> <specifier>public</specifier> <name>void</name></type> <name>main</name><parameter_list>(<parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>arg</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    	
+        <decl_stmt><decl><type><name>XMPPManager</name></type> <name>connectionManager</name> <init>= <expr><operator>new</operator> <call><name>XMPPManager</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>DefaultController</name></type> <name>controller</name> <init>= <expr><operator>new</operator> <call><name>DefaultController</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>jTalkFrame</name></type> <name>jtalkView</name> <init>= <expr><operator>new</operator> <call><name>jTalkFrame</name><argument_list>(<argument><expr><name>controller</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+                
+        <expr_stmt><expr><call><name><name>controller</name><operator>.</operator><name>addModel</name></name><argument_list>(<argument><expr><name>connectionManager</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name><name>Runtime</name><operator>.</operator><name>getRuntime</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>addShutdownHook</name><argument_list>(<argument><expr><operator>new</operator> <call><name>Shutdown</name><argument_list>(<argument><expr><name>connectionManager</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name><name>jtalkView</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+    </block_content>}</block></function>
+</unit>

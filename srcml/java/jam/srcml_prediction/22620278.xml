@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41469074.java">	<function><type><specifier>private</specifier> <name>AsnStandard</name></type> <name>makeAsnStandard</name><parameter_list>(<parameter><decl><type><name>Element</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>AsnStatement</name></type> <name>stmnt</name> <init>= <expr><operator>new</operator> <call><name>AsnStatement</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>AsnStandard</name></type> <name>std</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name>authorIsAPAC</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>std</name> <operator>=</operator> <operator>new</operator> <call><name>APACBenchmark</name><argument_list>(<argument><expr><name>stmnt</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if>
+		<if type="elseif">else if <condition>(<expr><call><name>authorIsAAAS</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>std</name> <operator>=</operator> <operator>new</operator> <call><name>AAASBenchmark</name><argument_list>(<argument><expr><name>stmnt</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if>
+		<if type="elseif">else if <condition>(<expr><call><name>authorIsCommonCore</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>std</name> <operator>=</operator> <operator>new</operator> <call><name>CommonCoreStandard</name><argument_list>(<argument><expr><name>stmnt</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if>
+		<else>else <block>{<block_content>
+			<expr_stmt><expr><name>std</name> <operator>=</operator> <operator>new</operator> <call><name>AsnStandard</name><argument_list>(<argument><expr><name>stmnt</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		<return>return <expr><name>std</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

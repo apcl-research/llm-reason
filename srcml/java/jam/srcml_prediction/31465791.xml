@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3389721.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>compareTo</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>other</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<decl_stmt><decl><type><name>Version</name></type> <name>ver</name> <init>= <expr><operator>(</operator><name>Version</name><operator>)</operator> <name>other</name></expr></init></decl>;</decl_stmt>
+	<comment type="line">// and if the above fails, it's OK according to the Comparable interface -</comment>
+	<comment type="line">// yay!</comment>
+	<decl_stmt><decl><type><name>int</name></type> <name>c</name> <init>= <expr><name>major</name> <operator>-</operator> <name><name>ver</name><operator>.</operator><name>major</name></name></expr></init></decl>;</decl_stmt>
+	<if_stmt><if>if <condition>(<expr><name>c</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+	    <expr_stmt><expr><name>c</name> <operator>=</operator> <name>minor</name> <operator>-</operator> <name><name>ver</name><operator>.</operator><name>minor</name></name></expr>;</expr_stmt>
+	    <if_stmt><if>if <condition>(<expr><name>c</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+		<expr_stmt><expr><name>c</name> <operator>=</operator> <name>patch</name> <operator>-</operator> <name><name>ver</name><operator>.</operator><name>patch</name></name></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><name>c</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+		    <return>return <expr><name>build</name> <operator>-</operator> <name><name>ver</name><operator>.</operator><name>build</name></name></expr>;</return></block_content></block></if></if_stmt>
+	    </block_content>}</block></if></if_stmt>
+	</block_content>}</block></if></if_stmt>
+	<return>return <expr><name>c</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

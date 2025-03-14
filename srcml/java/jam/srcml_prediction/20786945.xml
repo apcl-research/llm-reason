@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/47189996.java">   <function><type><specifier>protected</specifier> <name>void</name></type> <name>fireEvent</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>ResultSet</name></type> <name>resultSet</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	  
+	  <decl_stmt><decl><type><name>Executor</name></type> <name>executor</name> <init>= <expr><call><name><name>Executors</name><operator>.</operator><name>newFixedThreadPool</name></name><argument_list>(<argument><expr><name>NUMBER_OF_THREADS</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+	  <for>for <control>(<init><decl><type><specifier>final</specifier> <name>GestureHandler</name></type> <name>gestureHandler</name> <range>: <expr><call><name><name>resultSet</name><operator>.</operator><name>getSource</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getGestureHandlers</name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+	     <expr_stmt><expr><call><name><name>LOGGER</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"Handler: "</literal><operator>+</operator><call><name><name>gestureHandler</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	     <if_stmt><if>if <condition>(<expr><name>gestureHandler</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+	        <expr_stmt><expr><call><name><name>executor</name><operator>.</operator><name>execute</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>Runnable</name></super><argument_list>()</argument_list> <block>{
+	
+	           <function><annotation>@<name>Override</name></annotation>
+	           <type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+	              <expr_stmt><expr><call><name><name>gestureHandler</name><operator>.</operator><name>handle</name></name><argument_list>(<argument><expr><name>resultSet</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	           </block_content>}</block></function>
+	           
+	        }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	     </block_content>}</block></if></if_stmt>
+	  </block_content>}</block></for>
+   </block_content>}</block></function> <comment type="line">// fireEvent</comment>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31309996.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>generateAll</name><parameter_list>(<parameter><decl><type><name>Universe</name></type> <name>u</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name>i</name></decl>,<decl><type ref="prev"/><name>id</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>Ship</name></type> <name>ship</name></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>Vcr</name></type> <name>vcr</name></decl>;</decl_stmt>
+    <for>for <control>(<init><expr><name>i</name><operator>=</operator><literal type="number">1</literal></expr>;</init><condition><expr><name>i</name><operator>&lt;=</operator><name>vcrcount</name></expr>;</condition><incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+      <try>try <block>{<block_content>
+	<expr_stmt><expr><name>vcr</name><operator>=</operator><operator>new</operator> <call><name>Vcr</name><argument_list>(<argument><expr><name>u</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name><name>vcr</name><operator>.</operator><name>readFrom</name></name><argument_list>(<argument><expr><name>source</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name><name>u</name><operator>.</operator><name>putVcr</name></name><argument_list>(<argument><expr><name>vcr</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// universe does the necessary filtering</comment>
+      </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>ioe</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<expr_stmt><expr><call><name>crash</name><argument_list>(<argument><expr><literal type="number">11</literal></expr></argument>, <argument><expr><literal type="string">"Error while reading shipdata: "</literal><operator>+</operator><name>ioe</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></catch></try>
+    </block_content>}</block></for>
+  </block_content>}</block></function>
+</unit>
