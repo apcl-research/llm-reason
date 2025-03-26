@@ -1,0 +1,2 @@
+source_file: "/nfs/projects/llm_reason/callgraph/all_methods_c.pkl"
+OUT_FILENAME: "/nfs/projects/llm_reason/callgraph/callgraph_result_gemini_c.pkl"
