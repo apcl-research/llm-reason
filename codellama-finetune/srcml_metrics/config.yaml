@@ -1,3 +1,4 @@
 tool_filename: "/nublar/datasets/jm52m/q90testfids_srcml.pkl"
 llm_filename: "/home/chiayi/project/qlora-codellama/predictions/srcml_java_codellama.pkl"
 testfid_filename: "/scratch/chiayi/llm_reason/srcml/srcml_result_codellama_java_function_test.pkl"
+c_prediction_filename: "/home/chiayi/project/qlora-codellama/predictions/srcml_c_codellama.pkl"
