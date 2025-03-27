@@ -1,0 +1,2 @@
+datafile: "/nfs/projects/llm_reason/c_code/function_processed_test.pkl"
+OUT_FILENAME: "/nfs/projects/llm_reason/srcml/results/srcml_gemini_results_c.pkl"
