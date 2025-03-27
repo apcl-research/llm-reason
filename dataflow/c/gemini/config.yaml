@@ -1,0 +1,2 @@
+OUT_FILENAME: "/scratch/chiayi/llm_reason/data_analysis/data_flow_results_gemini_test_c.pkl"
+datafile: "/nfs/projects/llm_reason/data_analysis/c/data_flow_results_c_new_test_filtered.pkl"
