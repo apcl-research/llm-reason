@@ -35,6 +35,8 @@ You also need to download the CodeLlama 13B model in Meta [Huggingace](https://h
 
 For GPT and Gemini, ``*_example.py`` means with in-context learning where * is either GPT or Gemini e.g. ``gpt_example.py`` means gpt models with in-context learning.
 
+We realse all of the data and models with results in our hugginface website. See the [link](https://huggingface.co/apcl/llm_reason) for models and the [link](https://huggingface.co/datasets/apcl/llm-reason) for datastet and results.
+
 
 ## AST generation
 
